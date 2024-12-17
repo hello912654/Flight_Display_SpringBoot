@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Info</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h2>航班資訊列表</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>航空公司ID</th>
+                <th>航班號碼</th>
+                <th>出發地</th>
+                <th>目的地</th>
+                <th>預計起飛時間 (STD)</th>
+                <th>預計到達時間 (STA)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="flight : ${flights}">
+                <td th:text="${flight.id}">1</td>
+                <td th:text="${flight.airline_id}">123</td>
+                <td th:text="${flight.flight_no}">FL123</td>
+                <td th:text="${flight.flight_from}">TPE</td>
+                <td th:text="${flight.flight_to}">MNL</td>
+                <td th:text="${flight.std}">2024-01-01 10:00</td>
+                <td th:text="${flight.sta}">2024-01-01 14:00</td>
+            </tr>
+            </tbody>
+        </table>
+</div>
+</body>
+</html>
